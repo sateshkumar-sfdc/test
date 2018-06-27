@@ -10,12 +10,18 @@ trigger ArtWorkflow on Order(after update) {
            for (order ordobj: orderlist) {
              if(((Trigger.oldMap.get(ordobj.id)).OriginSource__c != (Trigger.newMap.get(ordobj.id)).OriginSource__c) || (Trigger.oldMap.get(ordobj.id)).OriginSource__c == ''){
                 if (ordobj.OriginSource__c == 'SFDC' && (Trigger.newMap.get(ordobj.id)).OriginSource__c== 'SFDC' ) {
-                    ordobj.Internal_Review_Status__c = 'Approved';
-                    updateorder.add(ordobj);
                     for (orderitem lineitems: ordobj.orderitems) {
                         lineitems.CGS_Status__c = 'Approved';
                         updatelineitems.add(lineitems);
-                    }
+                        if(lineitems.custpreview__c != ''){
+                          ordobj.Art_Conversion_Status__c ='Ready to Review'; 
+                        }else{
+                            ordobj.Art_Conversion_Status__c ='Pending Conversion';
+                        }
+                     }
+                    
+                    ordobj.Internal_Review_Status__c = 'Approved';
+                    updateorder.add(ordobj);
 
                 } 
             else if( (ordobj.OriginSource__c == 'SFCC' && (Trigger.newMap.get(ordobj.id)).OriginSource__c== 'SFCC') ||  ( ordobj.OriginSource__c == 'SAP' && (Trigger.newMap.get(ordobj.id)).OriginSource__c== 'SAP')) {

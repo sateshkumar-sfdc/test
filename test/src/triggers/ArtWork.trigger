@@ -2,9 +2,12 @@ trigger ArtWork on OrderItem (after update){
    if (RecursiveTriggerHandler.isFirstTime) {
         RecursiveTriggerHandler.isFirstTime = false;
         List<order> updateorder = new  List<order>(); 
-        set<id> orderids = new set<id>(); 
+        set<id> orderids = new set<id>();
+        list<string> listofLaserArt = new list<string>();
+         
         for(orderitem lineitem : trigger.new){
              orderids.add(lineitem.orderid);
+             
           }  
        List<order> orderlst = [select id, OriginSource__c, Internal_Review_Status__c, (select id, CGS_Status__c,Product2.name from orderitems where testflag__c = true) from order where id IN: orderids];
        system.debug(orderlst);
@@ -33,6 +36,8 @@ trigger ArtWork on OrderItem (after update){
            ordobj.Internal_Review_Status__c = 'Partially';   
          }else if(Flagged == false && Pending == false &&  Approved == true){
             ordobj.Internal_Review_Status__c = 'Approved';
+            
+            ordobj.Art_Conversion_Status__c = 'Pending Conversion';
          }else{
             ordobj.Internal_Review_Status__c = 'Pending';
          } 

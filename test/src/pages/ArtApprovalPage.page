@@ -1,35 +1,16 @@
 <apex:page sidebar="false" showHeader="true" docType="html-5.0">
 
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/home.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_base.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_nav.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_features.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_wizard.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_cart.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_lightbox.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_quote-form.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_gallery.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_designs.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_generic-landing.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_collegiate.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_customer-approval.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_checkout.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_about-us.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_order-estimate.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_order-status.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.ArtApprovalcss, '/ArtApprovalcss21/_hero-modules.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.bootstap, '/bootstrap-sass-master/assets/stylesheets/bootstrap/_variables.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.bootstap, '/bootstrap-sass-master/assets/stylesheets/bootstrap/mixins/_reset-text.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.bootstap, '/bootstrap-sass-master/assets/stylesheets/bootstrap/mixins/_opacity.scss')}"/>
-<apex:stylesheet value="{!URLFOR($Resource.bootstap, '/bootstrap-sass-master/assets/stylesheets/bootstrap/_tooltip.scss')}"/>
 
-<link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.scss" />
+<apex:stylesheet value="{!$Resource.yeticss}"/>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" />
+  <link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.scss" />
 <link rel="stylesheet" type="text/css" href="slider-overrides" />
-
-
-
-
-
+  
+    
+</head>
 
 
 <div id="app" data-ui="app-container"><header class="header-minimal border" style="top: 0px;">
@@ -125,7 +106,7 @@
                         
                             <a data-partial="modal-approval-preview-zoom" data-selector=".modal" data-modal-size="medium" data-zoom-url="https://rambleron-staging-approval.imgix.net/2018/06-08/11767/1528471536-large.png" data-sidekey="front" data-modal-open="" data-publish="customer-zoom-img-loaded">
                                 <div class="cart-preview rambler-tumbler-20oz">
-                                    <img src="https://rambleron-staging-approval.imgix.net/2018/06-08/11767/1528471536-large.png" />
+                                    <img src="https://s3.amazonaws.com/rambleron-staging/approval_images/2018/06-20/11821/1529535401-large.png" />
                                     <i class="fa fa-search-plus"></i>
                                 </div>
                             </a>
